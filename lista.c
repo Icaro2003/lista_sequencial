@@ -107,7 +107,7 @@ void inserirElementoInicioLista(Lista *l, int e)
             {
                 l->elementos[i] = l->elementos[i - 1];
             }
-            
+
             l->elementos[0] = e;
             l->quantidade++;
         }
@@ -118,7 +118,34 @@ void inserirElementoInicioLista(Lista *l, int e)
     }
     else
     {
-        printf("Lista inválida para inserir elementos!\n");
+        printf("Lista inválida para inserir elementos no início!\n");
+    }
+}
+
+void inserirElementoMeioLista(Lista *l, int e)
+{
+    if (l != NULL && e >= 0)
+    {
+        if (l->quantidade < l->tamanho)
+        {
+            int meioLista = l->quantidade / 2;
+
+            for (int i = l->quantidade; i > meioLista; i--)
+            {
+                l->elementos[i] = l->elementos[i - 1];
+            }
+
+            l->elementos[meioLista] = e;
+            l->quantidade++;
+        }
+        else
+        {
+            printf("Quantidade passou o limite da lista!\n");
+        }
+    }
+    else
+    {
+        printf("Lista inválida para inserir elementos no meio!\n");
     }
 }
 

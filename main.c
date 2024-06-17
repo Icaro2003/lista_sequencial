@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 #include "lista.h"
 
 int main()
 {
-    Lista *novaLista = criaLista(7);
+    setlocale(LC_ALL, "");
+
+    Lista *novaLista = criaLista(8);
 
     inserirElementoFinalLista(novaLista, 1);
     inserirElementoFinalLista(novaLista, 5);
@@ -14,6 +17,7 @@ int main()
     inserirElementoFinalLista(novaLista, 9);
 
     inserirElementoInicioLista(novaLista, 2);
+    inserirElementoMeioLista(novaLista, 8);
 
     removeElementoLista(novaLista, 24);
     inserirElementoFinalLista(novaLista, 15);
